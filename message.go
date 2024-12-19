@@ -35,6 +35,9 @@ func handleMessages() {
 				}
 			}
 		case "message":
+			// Save the message to the file
+			saveMessageToFile(msg)
+
 			if msg.To != "" {
 				// Direct Message (DM)
 				log.Printf("Direct message from %s to %s: %s", msg.From, msg.To, msg.Content)
