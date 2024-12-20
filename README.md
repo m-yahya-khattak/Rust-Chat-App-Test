@@ -49,3 +49,8 @@ cd <repository-folder>
    ```bash
    docker-compose build
    ```
+2. **Run the Application:**:
+   ```bash
+   docker-compose up
+   ```
+   The application will be accessible at http://localhost:8080.
