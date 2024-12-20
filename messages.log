@@ -1,1 +1,5 @@
 {"from":"PostmanUser","room":"general","content":"Hey let's store this message","action":"message"}
+{"from":"user1","room":"general","content":"how are you all!","action":"message"}
+{"from":"user2","room":"general","content":"pretty good","action":"message"}
+{"from":"user2","room":"general","content":"pretty good","action":"message"}
+{"from":"user1","to":"user2","content":"how are you user2","action":"message"}
