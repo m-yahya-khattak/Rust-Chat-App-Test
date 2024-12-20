@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  chat-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: chat-app
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./messages.log:/app/messages.log # Persist messages in the host filesystem
+    environment:
+      - CGO_ENABLED=0 # Ensure compatibility if switching between database or file storage
