@@ -54,3 +54,20 @@ cd <repository-folder>
    docker-compose up
    ```
    The application will be accessible at http://localhost:8080.
+3. **Stop the Application:**:
+   ```bash
+   docker-compose down
+   ```
+---
+
+## **Endpoints**
+
+### **1. WebSocket Endpoint**
+- **URL**: `ws://localhost:8080/ws`
+- **Purpose**: Real-time communication.
+
+#### **WebSocket Commands**
+- **Authenticate**:
+  ```json
+  {"username": "<username>", "password": "<password>"}
+  ```
