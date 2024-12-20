@@ -133,7 +133,6 @@ cd <repository-folder>
 
 ## **Project Structure**
 
-    ```bash
     chat_app/
     ├── main.go        # Entry point of the application (server setup and handlers)
     ├── db.go          # File-based storage (saveMessageToFile, getMessagesFromFile)
@@ -144,4 +143,3 @@ cd <repository-folder>
     ├── messages.log   # File to store chat messages (auto-created at runtime)
     ├── Dockerfile     # Dockerfile for containerizing the application
     ├── docker-compose.yml # Docker Compose configuration
-    ```
