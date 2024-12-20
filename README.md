@@ -58,6 +58,7 @@ cd <repository-folder>
    ```bash
    docker-compose down
    ```
+
 ---
 
 ## **Endpoints**
@@ -96,3 +97,51 @@ cd <repository-folder>
   {"username": "<username>", "password": "<password>"}
   ```
 - **Response**: `201 Created` if successful.
+
+### **3. Chat History Endpoint**
+- **URL**: `http://localhost:8080/history?room=<room-name>`
+- **Method**: `GET`
+- **Purpose**: Retrieve all messages from a specific room.
+- **Response**:
+  ```json
+  [
+    {"from": "user1", "room": "general", "content": "Hello!", "action": "message"},
+    {"from": "user2", "room": "general", "content": "Hi!", "action": "message"}
+  ]
+  ```
+
+---
+
+## **Testing the Application**
+
+### **Using WebSocket Client (`wscat`)**
+1. Install `wscat`:
+   ```bash
+   npm install -g wscat
+   ```
+2. Connect to the WebSocket endpoint:
+   ```bash
+   wscat -c ws://localhost:8080/ws
+   ```
+3. Test WebSocket commands (e.g., authenticate, send messages).
+
+### **Using Postman**
+- Use the Postman WebSocket client for real-time communication.
+- Use Postman for HTTP endpoints (`/register`, `/history`).
+
+---
+
+## **Project Structure**
+
+    ```bash
+    chat_app/
+    ├── main.go        # Entry point of the application (server setup and handlers)
+    ├── db.go          # File-based storage (saveMessageToFile, getMessagesFromFile)
+    ├── client.go      # Client struct and related operations
+    ├── message.go     # Message processing logic (handleMessages)
+    ├── websocket.go   # WebSocket connection handling logic (handleConnections)
+    ├── auth.go        # User registration and authentication
+    ├── messages.log   # File to store chat messages (auto-created at runtime)
+    ├── Dockerfile     # Dockerfile for containerizing the application
+    ├── docker-compose.yml # Docker Compose configuration
+    ```
