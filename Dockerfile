@@ -14,11 +14,14 @@ COPY . .
 # Build the Go application
 RUN go build -o chat-app .
 
-# Create a minimal runtime image
-FROM debian:bullseye-slim
+# Use a compatible runtime image
+FROM ubuntu:22.04
 
 # Set the working directory for the runtime container
 WORKDIR /app
+
+# Install necessary runtime dependencies
+RUN apt-get update && apt-get install -y libc6 libstdc++6
 
 # Copy the compiled application from the builder stage
 COPY --from=builder /app/chat-app .
