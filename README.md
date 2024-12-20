@@ -71,3 +71,19 @@ cd <repository-folder>
   ```json
   {"username": "<username>", "password": "<password>"}
   ```
+- **Join a Room:**:
+  ```json
+  {"from": "<username>", "room": "<room-name>", "action": "join"}
+  ```
+- **Send a Message to a Room:**:
+  ```json
+  {"from": "<username>", "room": "<room-name>", "content": "<message>", "action": "message"}
+  ```
+- **Send a Direct Message:**:
+  ```json
+  {"from": "<username>", "to": "<recipient>", "content": "<message>", "action": "message"}
+  ```
+- **Leave a Room:**:
+  ```json
+  {"from": "<username>", "room": "<room-name>", "action": "leave"}
+  ```
