@@ -87,3 +87,12 @@ cd <repository-folder>
   ```json
   {"from": "<username>", "room": "<room-name>", "action": "leave"}
   ```
+
+### **2. User Registration Endpoint**
+- **URL**: `http://localhost:8080/register`
+- **Method**: `POST`
+- **Request Body**:
+  ```json
+  {"username": "<username>", "password": "<password>"}
+  ```
+- **Response**: `201 Created` if successful.
